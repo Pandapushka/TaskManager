@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:TaskManager"
         mc:Ignorable="d"
         Title="MainWindow" Height="832" Width="1280"
+        MinWidth="1150" MinHeight="450"
         WindowStartupLocation="CenterScreen">
 
     <Grid>
@@ -18,6 +19,23 @@
 
         <!--Нав. панель -->
         <Rectangle Fill="{StaticResource AccentDark}"/>
+        <StackPanel Margin="10 15 10 10">
+            <Button Style="{StaticResource NavButton}">
+                <Viewbox>
+                    <Path Data="{StaticResource Icon2}" Fill="White"/>
+                </Viewbox>
+            </Button>
+            <Button Style="{StaticResource NavButton}" >
+                <Viewbox Width="25">
+                    <Path Data="{StaticResource Icon3}" Fill="White" Margin="5 0 0 0"/>
+                </Viewbox>
+            </Button>
+            <Button Style="{StaticResource NavButton}">
+                <Viewbox>
+                    <Path Data="{StaticResource Icon4}" Fill="White"/>
+                </Viewbox>
+            </Button>
+        </StackPanel>
         <!--Фон списка задач -->
         <Rectangle Fill="{StaticResource TaskListBackground}" Grid.Column="1"/>
 
@@ -44,9 +62,9 @@
                     Width="40"
                     Margin="0 0 20 0">
                 <!--Значек -->
-                <Label
-                       Content="+"
-                       Style="{StaticResource Heading1}"/>
+                <Viewbox>
+                    <Path Data="{StaticResource Icon}" Fill="White" Margin="5 0 5 0"/>
+                </Viewbox>
             </Button>
             <!--Строка поиска -->
             <TextBox x:Name="TaskSeachBox"
@@ -66,10 +84,12 @@
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     Margin="0 0 40 0"
-                    Padding="5">
+                    Padding="5"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
 
                 <Viewbox>
-                    <Path Data="{StaticResource SearchIcon}"/>
+                    <Path Data="{StaticResource IconSearch}" Fill="Black"/>
                 </Viewbox>
             </Button>
             <!--Список задач вью -->
@@ -106,10 +126,10 @@
                         Padding="20 5"
                         CornerRadius="5"
                         Background="{StaticResource Importance_Crit}">
-                    <TextBlock Text="Critical"
+                    <TextBlock Text="Критично"
                                Foreground="Black"
                                FontWeight="Normal"
-                               FontSize="18">
+                               FontSize="12">
 
                     </TextBlock>
                 </Border>
@@ -135,14 +155,55 @@
                            Grid.Row="2"
                            Foreground="White"/>
             </Grid>
-
-            <!--Лист проверки-->
-            <ListView Grid.Row="1">
-                
-            </ListView>
+            <Grid Grid.Row="1"
+                  Margin="0 20 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <!--Заголовок листа-->
+                <TextBlock Style="{StaticResource Title}"
+                           Text="Контрольный список задач"
+                           Margin="20 0 0 0"
+                           VerticalAlignment="Center"/>
+                <!--Лист проверки-->
+                <ListView 
+                          Background="Transparent"
+                          BorderThickness="0"
+                          Grid.Row="1">
+                </ListView>
+            </Grid>
+            
+            <!--Кнопки-->
+            <Grid Grid.Row="2">
+                <Button HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource TaskViewDeleteButton}"
+                        Content="Удалить"
+                        Margin="20 0 0 0"/>
+                <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource TaskViewEditButton}"
+                        Content="Редактировать"/>
+                <Button HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource TaskViewCompleteButton}"
+                        Content="Завершено"
+                        Margin="0 0 20 0"/>
+            </Grid>
         </Grid>
 
             <!--Панель статуса задач -->
         <Rectangle Fill="{StaticResource TaskStatusBackground}" Grid.Column="3"/>
+        
+        <!--Статус задачи-->
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="142"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        
     </Grid>
 </Window>

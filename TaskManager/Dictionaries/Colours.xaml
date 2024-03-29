@@ -26,4 +26,18 @@
     <SolidColorBrush x:Key="Progres_Late" Color="#FFB46161"/>
     <SolidColorBrush x:Key="Progres_Archived" Color="#FFC8A36C"/>
     <SolidColorBrush x:Key="Progres_Deleted" Color="#FF606060"/>
+
+    <SolidColorBrush x:Key="Button_Complete" Color="#FF2AD985"/>
+    <SolidColorBrush x:Key="Button_Complete_Over" Color="#FF4B886B"/>
+    <SolidColorBrush x:Key="Button_Complete_Click" Color="#FF9FD4BB"/>
+    <SolidColorBrush x:Key="Button_Edit" Color="#FF606060"/>
+    <SolidColorBrush x:Key="Button_Edit_Over" Color="#FF676767"/>
+    <SolidColorBrush x:Key="Button_Edit_Click" Color="#FFBDBDBD"/>
+    <SolidColorBrush x:Key="Button_Delete" Color="#FFCA2C2C"/>
+    <SolidColorBrush x:Key="Button_Delete_Over" Color="#FF863636"/>
+    <SolidColorBrush x:Key="Button_Delete_Click" Color="#FFC18888"/>
+
+    <SolidColorBrush x:Key="Nav_Default" Color="Transparent"/>
+    <SolidColorBrush x:Key="Nav_Over" Color="#FF396A84"/>
+    <SolidColorBrush x:Key="Nav_Click" Color="#FF87B7D0"/>
 </ResourceDictionary>
